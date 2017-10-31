@@ -7,6 +7,10 @@ Project("{CC5FD16D-436D-48AD-A40C-5A424C6E3E79}") = "WCF_Test", "WCF_Test\WCF_Te
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WCFService_Test", "WCFService_Test\WCFService_Test.csproj", "{6B49768A-EF85-4B05-96BF-71D52BC549F1}"
 EndProject
+Project("{CC5FD16D-436D-48AD-A40C-5A424C6E3E79}") = "AzureCloud_WCFClient", "AzureCloud_WCFClient\AzureCloud_WCFClient.ccproj", "{39A899AD-4613-4063-9CB2-1C519E4DFCFF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebRole_WCFClient", "WebRole_WCFClient\WebRole_WCFClient.csproj", "{D73E7CFE-73B2-46EC-A0C4-861BF34B5BF1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{6B49768A-EF85-4B05-96BF-71D52BC549F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6B49768A-EF85-4B05-96BF-71D52BC549F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6B49768A-EF85-4B05-96BF-71D52BC549F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39A899AD-4613-4063-9CB2-1C519E4DFCFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39A899AD-4613-4063-9CB2-1C519E4DFCFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39A899AD-4613-4063-9CB2-1C519E4DFCFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39A899AD-4613-4063-9CB2-1C519E4DFCFF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D73E7CFE-73B2-46EC-A0C4-861BF34B5BF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D73E7CFE-73B2-46EC-A0C4-861BF34B5BF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D73E7CFE-73B2-46EC-A0C4-861BF34B5BF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D73E7CFE-73B2-46EC-A0C4-861BF34B5BF1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

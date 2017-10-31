@@ -5,6 +5,7 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
+using WCFService_Test.Models;
 
 namespace WCFService_Test
 {
@@ -12,22 +13,33 @@ namespace WCFService_Test
     // NOTE: In order to launch WCF Test Client for testing this service, please select Service1.svc or Service1.svc.cs at the Solution Explorer and start debugging.
     public class Service1 : IService1
     {
-        public string GetData(int value)
+        Models.LaptopContext _db = new LaptopContext();
+
+
+
+        public List<Models.Laptop> DeleteMovie(int MovieId)
         {
-            return string.Format("You entered: {0}", value);
+            Models.Laptop temp = _db.Laptops.SingleOrDefault(a => a.MovieId.Equals(MovieId));
+            _db.Laptops.Remove(temp);
+            _db.SaveChanges();
+            return _db.Laptops.ToList();
         }
 
-        public CompositeType GetDataUsingDataContract(CompositeType composite)
+        public List<Laptop> GetMoviesList(string Director)
         {
-            if (composite == null)
+            var rs = _db.Laptops.ToList();
+            if (!string.IsNullOrEmpty(Director))
             {
-                throw new ArgumentNullException("composite");
+                rs = _db.Laptops.ToList().Where(a => a.Director.Contains(Director)).ToList();
             }
-            if (composite.BoolValue)
-            {
-                composite.StringValue += "Suffix";
-            }
-            return composite;
+            return rs;
+        }
+
+        public void PostMovie(Models.Laptop newLaptop)
+        {
+            _db.Laptops.Add(newLaptop);
+            _db.SaveChanges();
+            return;
         }
     }
 }

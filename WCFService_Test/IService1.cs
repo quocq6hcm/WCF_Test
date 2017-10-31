@@ -14,34 +14,25 @@ namespace WCFService_Test
     {
 
         [OperationContract]
-        string GetData(int value);
+        [WebInvoke(Method = "GET",
+                    RequestFormat = WebMessageFormat.Json,
+                    ResponseFormat = WebMessageFormat.Json,
+                    UriTemplate = "GetMoviesList?Director={Director}")]
+        List<Models.Laptop> GetMoviesList(string Director);
+
+
+        //[OperationContract]
+        //[WebInvoke(Method = "POST",
+        //            RequestFormat = WebMessageFormat.Json,
+        //            ResponseFormat = WebMessageFormat.Json,
+        //            UriTemplate = "PostMovie")]
+        //void PostMovie(Models.Laptop newLaptop);
 
         [OperationContract]
-        CompositeType GetDataUsingDataContract(CompositeType composite);
-
-        // TODO: Add your service operations here
-    }
-
-
-    // Use a data contract as illustrated in the sample below to add composite types to service operations.
-    [DataContract]
-    public class CompositeType
-    {
-        bool boolValue = true;
-        string stringValue = "Hello ";
-
-        [DataMember]
-        public bool BoolValue
-        {
-            get { return boolValue; }
-            set { boolValue = value; }
-        }
-
-        [DataMember]
-        public string StringValue
-        {
-            get { return stringValue; }
-            set { stringValue = value; }
-        }
+        [WebInvoke(Method = "DELETE",
+                    RequestFormat = WebMessageFormat.Json,
+                    ResponseFormat = WebMessageFormat.Json,
+                    UriTemplate = "DeleteMovie?MovieId={MovieId}")]
+        List<Models.Laptop> DeleteMovie(int MovieId);
     }
 }
