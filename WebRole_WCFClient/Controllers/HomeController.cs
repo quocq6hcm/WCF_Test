@@ -23,40 +23,40 @@ namespace WebRole_WCFClient.Controllers
          
         }
 
-        //public ActionResult Create() => View();
+        public ActionResult Create() => View();
 
-        //[HttpPost]
-        //public ActionResult Create(Models.Laptop newLaptop)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
+        [HttpPost]
+        public ActionResult Create(Models.Laptop newLaptop)
+        {
+            if (ModelState.IsValid)
+            {
 
 
-        //        MemoryStream ms = new MemoryStream();
-        //        DataContractJsonSerializer dc = new DataContractJsonSerializer(typeof(Models.Laptop));
-        //        dc.WriteObject(ms, newLaptop);
-        //        wc.Headers["content-type"] = "application/json";
-        //        wc.UploadData(url + "PostMovie", ms.ToArray());
+                MemoryStream ms = new MemoryStream();
+                DataContractJsonSerializer dc = new DataContractJsonSerializer(typeof(Models.Laptop));
+                dc.WriteObject(ms, newLaptop);
+                wc.Headers["content-type"] = "application/json";
+                wc.UploadData(url + "PostMovie", ms.ToArray());
 
-        //        ModelState.AddModelError("", "Add completed!");
-        //        //            return RedirectToAction("Index", "Home");
-        //        return View();
-        //    }
-        //    else
-        //    {
-        //        ModelState.AddModelError("", "ModelState is not valid");
-        //        return View();
-        //    }
-        //}
-        //public ActionResult Delete(int Ahihiid)
-        //{
-        //    MemoryStream ms = new MemoryStream();
-        //    DataContractJsonSerializer dc = new DataContractJsonSerializer(typeof(Models.Laptop));
-        //    dc.WriteObject(ms, Ahihiid);
-        //    wc.Headers["content-type"] = "application/json";
-        //    wc.UploadData(url + "DeleteMovie?MovieId=" + id, "DELETE", ms.ToArray());
-        //    return Redirect(Request.UrlReferrer.PathAndQuery);
-        //}
+                ModelState.AddModelError("", "Add completed!");
+                //            return RedirectToAction("Index", "Home");
+                return View();
+            }
+            else
+            {
+                ModelState.AddModelError("", "ModelState is not valid");
+                return View();
+            }
+        }
+//        public ActionResult Delete(int Ahihiid)
+//        {
+//            MemoryStream ms = new MemoryStream();
+//            DataContractJsonSerializer dc = new DataContractJsonSerializer(typeof(Models.Laptop));
+//            dc.WriteObject(ms, Ahihiid);
+//            wc.Headers["content-type"] = "application/json";
+//            wc.UploadData(url + "DeleteMovie?MovieId=" + id, "DELETE", ms.ToArray());
+//            return Redirect(Request.UrlReferrer.PathAndQuery);
+//        }
 
         public ActionResult Delete(string Ahihiid)
         {

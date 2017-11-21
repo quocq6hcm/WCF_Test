@@ -21,12 +21,12 @@ namespace WCFService_Test
         List<Models.Laptop> GetMoviesList(string Director);
 
 
-        //[OperationContract]
-        //[WebInvoke(Method = "POST",
-        //            RequestFormat = WebMessageFormat.Json,
-        //            ResponseFormat = WebMessageFormat.Json,
-        //            UriTemplate = "PostMovie")]
-        //void PostMovie(Models.Laptop newLaptop);
+        [OperationContract]
+        [WebInvoke(Method = "POST",
+                    RequestFormat = WebMessageFormat.Json,
+                    ResponseFormat = WebMessageFormat.Json,
+                    UriTemplate = "PostMovie")]
+        void PostMovie(Models.Laptop newLaptop);
 
         [OperationContract]
         [WebInvoke(Method = "DELETE",
